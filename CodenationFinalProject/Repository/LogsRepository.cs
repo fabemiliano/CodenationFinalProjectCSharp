@@ -5,9 +5,9 @@ using CodenationFinalProject.Models;
 
 namespace CodenationFinalProject.Repository
 {
-    public class ErrorRepository : BaseRepository<Error>, IError
+    public class LogsRepository : BaseRepository<Logs>, ILogs
     {
-        public ErrorRepository(Context context) : base(context)
+        public LogsRepository(Context context) : base(context)
         {
 
         }

@@ -3,7 +3,7 @@ using CodenationFinalProject.Models;
 
 namespace CodenationFinalProject.Repository
 {
-    public interface IError : IBaseInterface<Error>
+    public interface ILogs : IBaseInterface<Logs>
     {
     }
 }

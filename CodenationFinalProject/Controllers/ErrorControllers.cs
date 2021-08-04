@@ -17,30 +17,30 @@ namespace CodenationFinalProject.Controllers
     [Authorize]
     public class ProcessesController : Controller
     {
-        private readonly IProcesses repo;
+        private readonly IError repo;
         private readonly IMapper mapper;
-        public ProcessesController(IProcesses repo, IMapper mapper)
+        public ProcessesController(IError repo, IMapper mapper)
         {
             this.repo = repo;
             this.mapper = mapper;
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<ProcessesDTO> Get()
+        public IEnumerable<ErrorDTO> Get()
         {
-            return repo.GetAll().Select(x => mapper.Map<ProcessesDTO>(x)).ToList();
+            return repo.GetAll().Select(x => mapper.Map<ErrorDTO>(x)).ToList();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Processes GetById(int id)
+        public Error GetById(int id)
         {
             return repo.GetById(id);
         }
 
         // POST api/values
         [HttpPost]
-        public Processes Post([FromBody] Processes value)
+        public Error Post([FromBody] Error value)
         {
             var entry = repo.CreateNew(value);
             return entry;
@@ -48,7 +48,7 @@ namespace CodenationFinalProject.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public Processes Put([FromBody] Processes value)
+        public Error Put([FromBody] Error value)
         {
             var entry = repo.Update(value);
             return entry;
@@ -56,7 +56,7 @@ namespace CodenationFinalProject.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public Processes Delete(int id)
+        public Error Delete(int id)
         {
             var entry = repo.Delete(id);
             return entry;

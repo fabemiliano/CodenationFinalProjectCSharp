@@ -1,11 +1,14 @@
 ﻿using System;
 namespace CodenationFinalProject.ViewModel
 {
-    // Essa classe define quais as propriedades que serão transformadas
-    public class UsersDTO
+    public class LogsDTO
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
 
-        public string Email { get; set; }
+        public string UserId { get; set; }
+
+        public string ErrorId { get; set; }
+
+        public DateTime CreatedDate { get; set; }
     }
 }

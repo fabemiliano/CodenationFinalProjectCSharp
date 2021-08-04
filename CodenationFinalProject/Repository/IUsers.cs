@@ -3,7 +3,9 @@ using CodenationFinalProject.Models;
 
 namespace CodenationFinalProject.Repository
 {
-    public interface IError : IBaseInterface<Error>
+    public interface IUsers : IBaseInterface<Users>
     {
+        public Users getByEmail(string email);
     }
+
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ProjetoQualidade
+namespace CodenationFinalProject
 {
     public static class Settings
     {

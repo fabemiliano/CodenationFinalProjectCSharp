@@ -5,42 +5,42 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProjetoQualidade.Models;
-using ProjetoQualidade.Repository;
-using ProjetoQualidade.ViewModel;
+using CodenationFinalProject.Models;
+using CodenationFinalProject.Repository;
+using CodenationFinalProject.ViewModel;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ProjetoQualidade.Controllers
+namespace CodenationFinalProject.Controllers
 {
     [Route("api/[controller]")]
     [Authorize]
-    public class ProcessesController : Controller
+    public class ErrorController : Controller
     {
-        private readonly IProcesses repo;
+        private readonly ILogs repo;
         private readonly IMapper mapper;
-        public ProcessesController(IProcesses repo, IMapper mapper)
+        public ErrorController(ILogs repo, IMapper mapper)
         {
             this.repo = repo;
             this.mapper = mapper;
         }
         // GET: api/values
         [HttpGet]
-        public IEnumerable<ProcessesDTO> Get()
+        public IEnumerable<LogsDTO> Get()
         {
-            return repo.GetAll().Select(x => mapper.Map<ProcessesDTO>(x)).ToList();
+            return repo.GetAll().Select(x => mapper.Map<LogsDTO>(x)).ToList();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Processes GetById(int id)
+        public Logs GetById(int id)
         {
             return repo.GetById(id);
         }
 
         // POST api/values
         [HttpPost]
-        public Processes Post([FromBody] Processes value)
+        public Logs Post([FromBody] Logs value)
         {
             var entry = repo.CreateNew(value);
             return entry;
@@ -48,7 +48,7 @@ namespace ProjetoQualidade.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public Processes Put([FromBody] Processes value)
+        public Logs Put([FromBody] Logs value)
         {
             var entry = repo.Update(value);
             return entry;
@@ -56,7 +56,7 @@ namespace ProjetoQualidade.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public Processes Delete(int id)
+        public Logs Delete(int id)
         {
             var entry = repo.Delete(id);
             return entry;
