@@ -15,13 +15,13 @@ namespace CodenationFinalProject.Models
         public int Id { get; set; }
 
         [Column("user_id"), Required]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
 
         [ForeignKey("UserId")]
         public Users Users { get; set; }
 
         [Column("error_id"), Required]
-        public string ErrorId { get; set; }
+        public int ErrorId { get; set; }
 
         [ForeignKey("ErrorId")]
         public Error Error { get; set; }

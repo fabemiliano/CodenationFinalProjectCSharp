@@ -14,7 +14,7 @@ namespace CodenationFinalProject.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=localhost, 1401;Database=ProjetoQualidade;User Id=sa;Password=ReallyStrongPassword123");
+            optionsBuilder.UseSqlServer(@"Server=localhost, 1401;Database=CodenationFinalProject;User Id=sa;Password=ReallyStrongPassword123");
         }
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)

@@ -15,11 +15,11 @@ namespace CodenationFinalProject.Controllers
 {
     [Route("api/[controller]")]
     [Authorize]
-    public class ProcessesController : Controller
+    public class ErrorController : Controller
     {
         private readonly IError repo;
         private readonly IMapper mapper;
-        public ProcessesController(IError repo, IMapper mapper)
+        public ErrorController(IError repo, IMapper mapper)
         {
             this.repo = repo;
             this.mapper = mapper;

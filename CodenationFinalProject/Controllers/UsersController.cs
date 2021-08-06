@@ -15,11 +15,11 @@ using CodenationFinalProject.ViewModel;
 namespace CodenationFinalProject.Controllers
 {
     [Route("api/[controller]")]
-    public class LogsController : Controller
+    public class UsersController : Controller
     {
         private readonly IUsers repo;
         private readonly IMapper mapper;
-        public LogsController(IUsers repo, IMapper mapper)
+        public UsersController(IUsers repo, IMapper mapper)
         {
             this.repo = repo;
             this.mapper = mapper;
