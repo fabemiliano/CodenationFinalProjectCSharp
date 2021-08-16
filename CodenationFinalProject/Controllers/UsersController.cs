@@ -36,7 +36,7 @@ namespace CodenationFinalProject.Controllers
         [Route("login")]
         [AllowAnonymous]
 
-        public async Task<ActionResult<dynamic>> Authenticate([FromBody] Users user)
+        public async Task<ActionResult<dynamic>> Authenticate([FromBody] LoginDTO user)
         {
             var foundUser = repo.getByEmail(user.Email);
 
